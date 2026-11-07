@@ -1,10 +1,18 @@
 import React from "react";
 
 export default function Navbar1({ page, setPage }) {
+  //Backend dan keladigan logo
+  const user = {
+    id: 1,
+    logo: "https://i.ibb.co/gLfMCLx0/logo.jpg",
+    nickname: "Mustafo",
+    age: 13,
+    status: "admin"
+  }
   return (
     <nav>
       <div className="w-72 shrink-0 min-h-screen border-r border-neutral-200 bg-white text-neutral-900">
-        <div className="navbar__hero navbar__hero px-4.5 py-9">
+        <div className="navbar__hero flex min-h-screen flex-col gap-8 px-4.5 pt-9 pb-4">
           <div className="navbar__main flex flex-col gap-9">
             <div className="navbar__main-1 flex gap-1.5 items-center justify-center">
               <img
@@ -55,10 +63,14 @@ export default function Navbar1({ page, setPage }) {
               Add Listing
             </button>
           </div>
-          <div className="navbar__footer">
-            <button>Log Out</button>
-            <div className="myAccount">
-              
+          <div className="flex-col navbar__footer mt-auto flex  gap-3 border-t border-neutral-300 pt-4">
+            <button className=" shrink-0 cursor-pointer rounded-md px-3 py-2 text-sm text-neutral-600 transition-colors hover:bg-neutral-200 hover:text-neutral-900">Log Out</button>
+            <div className="myAccount flex min-w-0 items-center gap-2.5">
+              {
+                //info backend dan kelishi kerak. Ozi shetgacha borish uchun boshida registratsiya qilish kerak. Agar logo bolmasa tayyor noLogo rasm qoyiladi
+              }
+              <img src={user.logo || "/user.png"} alt="" className="size-9 shrink-0 rounded-full object-cover"/>
+              <h1 className="truncate text-sm font-semibold text-neutral-900">{user.nickname}</h1>
             </div>
           </div>
         </div>
